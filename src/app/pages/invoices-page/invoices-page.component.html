@@ -1,0 +1,26 @@
+<table mat-table [dataSource]="invoices$">
+	<ng-container matColumnDef="date">
+		<th mat-header-cell *matHeaderCellDef>Date</th>
+		<td mat-cell *matCellDef="let row">{{row.date | date:'shortDate'}}</td>
+	</ng-container>
+	<ng-container matColumnDef="service">
+		<th mat-header-cell *matHeaderCellDef>Service</th>
+		<td mat-cell *matCellDef="let row">{{row.service}}</td>
+	</ng-container>
+	<ng-container matColumnDef="cost">
+		<th mat-header-cell *matHeaderCellDef>Cost</th>
+		<td mat-cell *matCellDef="let row">{{row.cost | currency}}</td>
+	</ng-container>
+
+	<tr mat-header-row *matHeaderRowDef="columns"></tr>
+	<tr mat-row *matRowDef="let row; columns: columns;"></tr>
+</table>
+
+<br>
+<h3>Pay With</h3>
+
+<mat-select>
+	<mat-option *ngFor="let card of (cards$ | async)" [value]="card.id">
+    {{ card.nickname }} -- {{ card.last_4 }}
+	</mat-option>
+</mat-select>

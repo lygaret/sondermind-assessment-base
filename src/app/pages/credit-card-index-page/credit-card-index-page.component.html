@@ -1,0 +1,11 @@
+<h1>Credit Cards</h1>
+
+<ul>
+  <li *ngFor="let card of cards$ | async">
+    {{ card.nickname}} - {{ card.last_4 }}
+  </li>
+</ul>
+
+<a mat-fab routerLink="./create" aria-label="Create New Card">
+  <mat-icon>add</mat-icon>
+</a>

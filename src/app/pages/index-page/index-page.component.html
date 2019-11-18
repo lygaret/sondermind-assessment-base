@@ -1,0 +1,53 @@
+<p>Please work on the following tasks, for no more than 4 or so hours.</p>
+<p>The goal is not to get you to do work for free, but to assess where your strengths lie, etc.</p>
+
+<h2>Credit Card Form</h2>
+<p>
+	Create a form for collecting credit card information, under the <a routerLink='/creditcards/new'>New Credit Card Page</a>.
+</p>
+
+<h3>Requirements</h3>
+<ul>
+	<li>The form should have the following fields:
+		<dl>
+      <dt>Nickname</dt>
+      <dd>Required, the card's nickname, at least 1 character.</dd>
+			<dt>Cardholder's First Name</dt>
+			<dd>Required, at least 1 character.</dd>
+			<dt>Cardholder's Last Name</dt>
+			<dd>Required, at least 1 character.</dd>
+			<dt>Billing Zip</dt>
+			<dd>Required, 5 digits long.</dd>
+			<dt>Card Number</dt>
+			<dd>Required, 16 digits long.</dd>
+		</dl>
+	</li>
+	<li>When the form is invalid, the save button should be disabled.</li>
+	<li>When the form is valid, the save button should be enabled.</li>
+	<li>
+		When the enabled save button is clicked, call the '#save' method on the <code>CreditCardService</code> with the
+		form contents
+		<ul>
+			<li>While the save is ongoing, disable the button.</li>
+			<li>If the save is successful, navigate back to the credit cards route.</li>
+			<li>If the save fails, show the error message and re-enable the save button.</li>
+		</ul>
+	</li>
+</ul>
+
+<h2>"New Credit Card" in Invoices</h2>
+<p>
+	Hook the form you just created up to 'credit card select' field on the <a routerLink='/invoices'>Invoice Payment Page</a>.
+</p>
+<h3>Requirements</h3>
+<ul>
+  <li>The requirements of form validation have not changed.</li>
+  <li>If the user clicks cancel in the modal, the modal should close and the card select field should be blank.</li>
+  <li>If the user clicks save in the modal, call the '#save' method on the <code>CreditCardServices</code> with the form contents.
+    <ul>
+      <li>While the save is ongoing, all modal buttons are disabled.</li>
+      <li>If the save is successful, hide the modal, and ensure the new card is selected in the form.</li>
+      <li>If the save fails, don't hide the model, and show the error message in the form.</li>
+    </ul>
+  </li>
+</ul>
