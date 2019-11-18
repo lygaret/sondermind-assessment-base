@@ -38,11 +38,18 @@
 <h2>"New Credit Card" in Invoices</h2>
 <p>
 	Hook the form you just created up to 'credit card select' field on the <a routerLink='/invoices'>Invoice Payment Page</a>.
+  In particular, add a 'New Card' option to the select, and when that option is selected, 
 </p>
 <h3>Requirements</h3>
 <ul>
-  <li>Use <a href="https://material.angular.io/components/dialog/overview">Angular MatDialog</a> to launch the modal.</li>
-  <li>The requirements of form validation have not changed.</li>
+  <li>Add a 'New Card' option to the 'Pay With' select.</li>
+  <li>
+    When 'New Card' is selected, launch a modal which contains the form from the first task.
+    <ul>
+      <li>Use <a href="https://material.angular.io/components/dialog/overview">MatDialog</a> to launch the modal.</li>
+      <li>The requirements of form validation have not changed.</li>
+    </ul>
+  </li>
   <li>If the user clicks cancel in the modal, the modal should close and the card select field should be blank.</li>
   <li>If the user clicks save in the modal, call the '#save' method on the <code>CreditCardServices</code> with the form contents.
     <ul>
@@ -51,4 +58,11 @@
       <li>If the save fails, don't hide the model, and show the error message in the form.</li>
     </ul>
   </li>
+</ul>
+
+<h2>Useful Resources</h2>
+
+<ul>
+  <li><a href="https://material.angular.io/components/dialog/overview">MatDialog Documentation</a></li>
+  <li><a href="https://material.angular.io/components/select/api#MatSelectChange">MatSelectChange</a> is the event that's raised on <code>mat-select (selectionChange)</code></li>
 </ul>
